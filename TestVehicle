@@ -1,0 +1,42 @@
+class Vehicle {
+    String brand;
+    int speed;
+
+    void start() {
+        System.out.println(brand + " vehicle started at speed " + speed);
+    }
+}
+
+class Car extends Vehicle {
+    int doors;
+
+    void displayCarDetails() {
+        System.out.println("Car brand: " + brand + ", Speed: " + speed + ", Doors: " + doors);
+    }
+}
+
+class Bike extends Vehicle {
+    boolean hasCarrier;
+
+    void displayBikeDetails() {
+        System.out.println("Bike brand: " + brand + ", Speed: " + speed + ", Has carrier: " + hasCarrier);
+    }
+}
+
+public class TestVehicle {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.brand = "Toyota";
+        car.speed = 120;
+        car.doors = 4;
+        car.displayCarDetails();
+        car.start();
+
+        Bike bike = new Bike();
+        bike.brand = "Honda";
+        bike.speed = 80;
+        bike.hasCarrier = true;
+        bike.displayBikeDetails();
+        bike.start();
+    }
+}
