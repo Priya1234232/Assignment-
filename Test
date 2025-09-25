@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+class Employee {
+    public String name;
+    protected double salary;
+    int age;
+    private String ssn;
+
+    public Employee(String name, double salary, int age, String ssn) {
+        this.name = name;
+        this.salary = salary;
+        this.age = age;
+        this.ssn = ssn;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Salary: " + salary);
+        System.out.println("Age: " + age);
+    }
+}
+
+class Manager extends Employee {
+    private String department;
+
+    public Manager(String name, double salary, int age, String ssn, String department) {
+        super(name, salary, age, ssn);
+        this.department = department;
+    }
+
+    public void showDetails() {
+        System.out.println("Manager: " + name);
+        System.out.println("Salary: " + salary);
+        System.out.println("Department: " + department);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        System.out.print("Enter salary: ");
+        double salary = sc.nextDouble();
+        System.out.print("Enter age: ");
+        int age = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter SSN: ");
+        String ssn = sc.nextLine();
+        System.out.print("Enter department: ");
+        String department = sc.nextLine();
+
+        Manager mgr = new Manager(name, salary, age, ssn, department);
+        mgr.showDetails();
+    }
+}
